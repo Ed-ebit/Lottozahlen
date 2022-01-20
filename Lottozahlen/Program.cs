@@ -11,17 +11,42 @@
             if (eingabe == "j")
             {
                 Random rnd = new Random();
-                int[] guteZahlen = { 45, 13, 28, 21, 20, 8, 12, 15, 46, 14, 30, 34, 37, 23, 40, 29, 35, 10, 17, 39, 44, 5, 24, 48, 49 };
+                int[] guteZahlen = { 45, 13, 28, 21, 20, 8, 12, 15, 46, 14, 30, 34, 37, 23, 40, 29, 35, 10, 17, 39, 44, 5, 24, 48 };
                 int[] normaleZahlen = { 1, 2, 3, 4, 6, 7, 9, 11, 15, 16, 17, 18, 19, 22, 25, 26, 27, 31, 32, 33, 35, 36, 38, 41, 42, 43, 47, 49 };
                 for (int i = 0; i < 4; i++)
                 {
                     int guteNummer = rnd.Next(guteZahlen.Length);
-                    Console.Write("{0,4}", guteZahlen[guteNummer]);
+                    int[] guteNummern = new int[8];
+                    foreach(int gute in guteNummern)
+                    {
+                        if(guteNummer == guteNummern[gute])
+                        {
+                            i--;
+                            break;
+                        }
+                        else
+                        {
+                            Console.Write("{0,4}", guteZahlen[guteNummer]);
+                        }
+                    }
+                    
                 }
                 for (int i = 0; i < 2; i++)
                 {
                     int normaleNummer = rnd.Next(normaleZahlen.Length);
-                    Console.Write("{0,4}", normaleZahlen[normaleNummer]);
+                    int[] normaleNummern = new int[8];
+                    foreach (int normale in normaleNummern)
+                    {
+                        if (normaleNummer == normaleNummern[normale])
+                        {
+                            i--;
+                            break;
+                        }
+                        else
+                        {
+                            Console.Write("{0,4}", normaleZahlen[normaleNummer]);
+                        }
+                    }
                 }
                 Console.WriteLine();
             }
